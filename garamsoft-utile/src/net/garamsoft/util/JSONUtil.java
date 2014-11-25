@@ -18,4 +18,18 @@ public class JSONUtil {
 			return -1;
 		}
 	}
+	public boolean getBoolean(String key, JSONObject json) {
+		try {
+			return json.getBoolean(key);
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	public boolean getBoolean(String key, JSONObject json,boolean def) {
+		try {
+			return json.getBoolean(key);
+		} catch (Exception e) {
+			return def;
+		}
+	}
 }
