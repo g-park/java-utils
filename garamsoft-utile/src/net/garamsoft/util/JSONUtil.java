@@ -1,35 +1,42 @@
 package net.garamsoft.util;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class JSONUtil {
 
-	public String getString(String key, JSONObject json) {
+	static public String getString(String key, JSONObject json) {
 		try {
 			return json.getString(key);
 		} catch (Exception e) {
 			return new String();
 		}
 	}
-	public int getInt(String key, JSONObject json) {
+	static public int getInt(String key, JSONObject json) {
 		try {
 			return json.getInt(key);
 		} catch (Exception e) {
 			return -1;
 		}
 	}
-	public boolean getBoolean(String key, JSONObject json) {
+	static public boolean getBoolean(String key, JSONObject json) {
 		try {
 			return json.getBoolean(key);
 		} catch (Exception e) {
 			return false;
 		}
 	}
-	public boolean getBoolean(String key, JSONObject json,boolean def) {
+	static public boolean getBoolean(String key, JSONObject json,boolean def) {
 		try {
 			return json.getBoolean(key);
 		} catch (Exception e) {
 			return def;
 		}
+	}
+	
+	static public void putString(String key,String value,JSONObject json){
+		try {
+			json.put(key, value);
+		} catch (JSONException e) {}
 	}
 }
