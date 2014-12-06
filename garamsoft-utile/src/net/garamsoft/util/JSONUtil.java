@@ -39,4 +39,9 @@ public class JSONUtil {
 			json.put(key, value);
 		} catch (JSONException e) {}
 	}
+	public static void put(String key, Object value, JSONObject json) {
+		try {
+			json.put(key, value);
+		} catch (JSONException e) {}
+	}
 }
